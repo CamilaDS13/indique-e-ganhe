@@ -1,44 +1,28 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <title>Painel de Campanhas - Indique e Ganhe</title>
     <style>
         body { font-family: 'Segoe UI', sans-serif; background-color: #121212; color: #e0e0e0; margin: 0; padding: 20px; }
         .container { max-width: 1400px; margin: auto; display: flex; flex-direction: column; gap: 20px; }
-        
         .top-section { display: flex; gap: 20px; align-items: stretch; }
         .card { background-color: #1e1e1e; padding: 20px; border-radius: 12px; border: 1px solid #333; }
         .consolidado { flex: 1; text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center; }
-        
-        .rule-info {
-            margin-top: 10px;
-            padding: 8px 16px;
-            background-color: #2b2b2b;
-            border: 1px dashed #bb86fc;
-            border-radius: 6px;
-            font-size: 0.9em;
-            color: #e0e0e0;
-        }
+        .rule-info { margin-top: 10px; padding: 8px 16px; background-color: #2b2b2b; border: 1px dashed #bb86fc; border-radius: 6px; font-size: 0.9em; color: #e0e0e0; }
         .rule-info strong { color: #bb86fc; }
-        
         .campanhas-container { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
         .campanha-card { background-color: #1e1e1e; padding: 20px; border-radius: 12px; border: 1px solid #333; display: flex; flex-direction: column; justify-content: space-between; }
-        
         .rank-badge { display: inline-block; background-color: #bb86fc; color: #121212; padding: 2px 8px; border-radius: 4px; font-weight: bold; font-size: 0.85em; margin-bottom: 10px; }
-        
         .grid-campanha { display: flex; flex-direction: column; gap: 8px; margin-top: 15px; }
         .highlight-box { background-color: #2b2b2b; border: 1px solid #444; padding: 10px 12px; border-radius: 8px; color: #ffffff; font-size: 0.90em; }
         .highlight-box strong { color: #03dac6; display: block; }
-        
         .tm-text { font-size: 0.85em; color: #aaa; margin-top: 2px; }
-        
         .invest-box { background-color: #1a2624; border: 1px solid #03dac6; padding: 10px 12px; border-radius: 8px; color: #03dac6; font-size: 0.90em; margin-top: 5px; }
-
         h2, h3 { color: #bb86fc; margin-top: 0; }
         .date-info { font-size: 0.8em; color: #b0bec5; display: block; margin-top: 5px; line-height: 1.3; }
         .val { font-size: 2.2em; font-weight: bold; color: #03dac6; margin: 10px 0; }
-        .btn-excel { background-color: #2e7d32; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; text-decoration: none; display: inline-block; margin-top: 12px; font-weight: bold; }
+        .btn-excel { background-color: #2e7d32; color: white; padding: 10px 20px; border: none; border-radius: 6px; cursor: pointer; text-decoration: none; display: inline-block; margin-top: 12px; font-weight: bold; font-size: 0.95em; }
         .btn-excel:hover { background-color: #388e3c; }
     </style>
 </head>
@@ -51,12 +35,11 @@
                 <div class="rule-info">
                     <strong>Regra do Bônus:</strong> Indicador ganha <strong>R$ 15,00</strong> e Indicado ganha <strong>R$ 10,00</strong>
                 </div>
-                <a href="#" class="btn-excel">Exportar Excel Completo</a>
+                <button class="btn-excel" onclick="exportarExcel()">Exportar Excel Completo</button>
             </div>
         </div>
 
         <div class="campanhas-container">
-            <!-- Campanha 01 -->
             <div class="campanha-card">
                 <div>
                     <div class="rank-badge">RANK #1</div>
@@ -79,7 +62,6 @@
                 </div>
             </div>
 
-            <!-- Campanha 02 -->
             <div class="campanha-card">
                 <div>
                     <div class="rank-badge" style="background-color: #03dac6;">RANK #2</div>
@@ -102,7 +84,6 @@
                 </div>
             </div>
 
-            <!-- Campanha 03 -->
             <div class="campanha-card">
                 <div>
                     <div class="rank-badge" style="background-color: #b0bec5;">RANK #3</div>
@@ -126,5 +107,34 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function exportarExcel() {
+            var linhas = [
+                ["Campanha", "Periodo", "Indicadores Qtd", "Indicadores Valor (R$)", "Indicadores TM (R$)", "Indicados Qtd", "Indicados Valor (R$)", "Indicados TM (R$)", "Incentivo (R$)", "Pct Incentivo (%)"],
+                ["Indique e Ganhe 01", "05/12/2025 a 28/02/2026", "49", "5071.91", "103.51", "73", "8752.88", "119.90", "1465.00", "10.60%"],
+                ["Indique e Ganhe 02", "01/04/2026 a 30/05/2026", "24", "1658.61", "69.11", "28", "2576.78", "92.03", "640.00", "15.11%"],
+                ["Indique e Ganhe 03", "18/06/2026 a 01/08/2026", "4", "832.25", "208.06", "17", "3004.82", "176.75", "230.00", "5.99%"],
+                [],
+                ["Total Consolidado:", "R$ 21.844,45"],
+                ["Regra do Bônus:", "Indicador R$15 / Indicado R$10"]
+            ];
+
+            var csvContent = "\uFEFF";
+            linhas.forEach(function(rowArray) {
+                var linhaStr = rowArray.join(";");
+                csvContent += linhaStr + "\n";
+            });
+
+            var blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+            var url = URL.createObjectURL(blob);
+            var a = document.createElement("a");
+            a.setAttribute("href", url);
+            a.setAttribute("download", "Relatorio_Campanhas_Indique_e_Ganhe.csv");
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
+    </script>
 </body>
 </html>
