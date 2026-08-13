@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background-color: #121212; color: #e0e0e0; margin: 0; padding: 20px; }
+        .container { max-width: 1400px; margin: auto; display: flex; flex-direction: column; gap: 20px; }
+        
+        .top-section { display: flex; gap: 20px; align-items: stretch; }
+        .card { background-color: #1e1e1e; padding: 20px; border-radius: 12px; border: 1px solid #333; }
+        .consolidado { flex: 2; text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+        .top-meses { flex: 1; }
+        
+        /* 3 cards de campanha lado a lado */
+        .campanhas-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        
+        .campanha-card {
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #333;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .grid-campanha {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 15px;
+        }
+        
+        /* Elemento de fundo claro para destacar */
+        .highlight-box {
+            background-color: #2b2b2b;
+            border: 1px solid #444;
+            padding: 12px 15px;
+            border-radius: 8px;
+            color: #ffffff;
+            font-size: 0.95em;
+        }
+        
+        .highlight-box strong {
+            color: #03dac6;
+            display: block;
+            margin-bottom: 4px;
+        }
+        
+        h2, h3 { color: #bb86fc; margin-top: 0; }
+        .date-info { font-size: 0.8em; color: #b0bec5; display: block; margin-top: 5px; line-height: 1.3; }
+        .val { font-size: 2.2em; font-weight: bold; color: #03dac6; margin: 10px 0; }
+        .btn-excel { background-color: #2e7d32; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; text-decoration: none; display: inline-block; margin-top: 10px; font-weight: bold; }
+        .btn-excel:hover { background-color: #388e3c; }
+        ul { padding-left: 20px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Top Section -->
+        <div class="top-section">
+            <div class="card consolidado">
+                <h2>Total Consolidado</h2>
+                <div class="val">R$ 21.844,45</div>
+                <p style="margin: 0; color: #aaa;">Valor total transacionado (Indicadores + Indicados)</p>
+                <a href="#" class="btn-excel">Exportar Excel</a>
+            </div>
+            <div class="card top-meses">
+                <h2>Top 3 Meses</h2>
+                <ul>
+                    <li>Janeiro 2026: 30 indicados</li>
+                    <li>Fevereiro 2026: 25 indicados</li>
+                    <li>Dezembro 2025: 20 indicados</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Campanhas lado a lado -->
+        <div class="campanhas-container">
+            <!-- Campanha 01 -->
+            <div class="campanha-card">
+                <div>
+                    <h3>Indique e Ganhe 01</h3>
+                    <span class="date-info"><strong>Período:</strong> 05/12/2025 a 28/02/2026<br><strong>Uso até:</strong> 15/03/2026</span>
+                </div>
+                <div class="grid-campanha">
+                    <div class="highlight-box">
+                        <strong>Indicadores:</strong> Qtd: 49 | R$ 5.071,91<br><span style="font-size:0.85em; color:#ccc;">Ticket Médio: R$ 103,51</span>
+                    </div>
+                    <div class="highlight-box">
+                        <strong>Indicados:</strong> Qtd: 73 | R$ 8.752,88<br><span style="font-size:0.85em; color:#ccc;">Ticket Médio: R$ 119,90</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Campanha 02 -->
+            <div class="campanha-card">
+                <div>
+                    <h3>Indique e Ganhe 02</h3>
+                    <span class="date-info"><strong>Período:</strong> 01/04/2026 a 30/05/2026<br><strong>Uso até:</strong> 15/06/2026</span>
+                </div>
+                <div class="grid-campanha">
+                    <div class="highlight-box">
+                        <strong>Indicadores:</strong> Qtd: 24 | R$ 1.658,61<br><span style="font-size:0.85em; color:#ccc;">Ticket Médio: R$ 69,11</span>
+                    </div>
+                    <div class="highlight-box">
+                        <strong>Indicados:</strong> Qtd: 28 | R$ 2.576,78<br><span style="font-size:0.85em; color:#ccc;">Ticket Médio: R$ 92,03</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Campanha 03 -->
+            <div class="campanha-card">
+                <div>
+                    <h3>Indique e Ganhe 03</h3>
+                    <span class="date-info"><strong>Período:</strong> 18/06/2026 a 01/08/2026<br><strong>Uso até:</strong> 15/08/2026</span>
+                </div>
+                <div class="grid-campanha">
+                    <div class="highlight-box">
+                        <strong>Indicadores:</strong> Qtd: 4 | R$ 832,25<br><span style="font-size:0.85em; color:#ccc;">Ticket Médio: R$ 208,06</span>
+                    </div>
+                    <div class="highlight-box">
+                        <strong>Indicados:</strong> Qtd: 17 | R$ 3.004,82<br><span style="font-size:0.85em; color:#ccc;">Ticket Médio: R$ 176,75</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
