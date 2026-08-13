@@ -11,6 +11,17 @@
         .card { background-color: #1e1e1e; padding: 20px; border-radius: 12px; border: 1px solid #333; }
         .consolidado { flex: 1; text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center; }
         
+        .rule-info {
+            margin-top: 10px;
+            padding: 8px 16px;
+            background-color: #2b2b2b;
+            border: 1px dashed #bb86fc;
+            border-radius: 6px;
+            font-size: 0.9em;
+            color: #e0e0e0;
+        }
+        .rule-info strong { color: #bb86fc; }
+        
         .campanhas-container { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
         .campanha-card { background-color: #1e1e1e; padding: 20px; border-radius: 12px; border: 1px solid #333; display: flex; flex-direction: column; justify-content: space-between; }
         
@@ -27,7 +38,8 @@
         h2, h3 { color: #bb86fc; margin-top: 0; }
         .date-info { font-size: 0.8em; color: #b0bec5; display: block; margin-top: 5px; line-height: 1.3; }
         .val { font-size: 2.2em; font-weight: bold; color: #03dac6; margin: 10px 0; }
-        .btn-excel { background-color: #2e7d32; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; text-decoration: none; display: inline-block; margin-top: 10px; font-weight: bold; }
+        .btn-excel { background-color: #2e7d32; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; text-decoration: none; display: inline-block; margin-top: 12px; font-weight: bold; }
+        .btn-excel:hover { background-color: #388e3c; }
     </style>
 </head>
 <body>
@@ -36,6 +48,9 @@
             <div class="card consolidado">
                 <h2>Total Consolidado</h2>
                 <div class="val">R$ 21.844,45</div>
+                <div class="rule-info">
+                    <strong>Regra do Bônus:</strong> Indicador ganha <strong>R$ 15,00</strong> e Indicado ganha <strong>R$ 10,00</strong>
+                </div>
                 <a href="#" class="btn-excel">Exportar Excel Completo</a>
             </div>
         </div>
@@ -51,15 +66,15 @@
                 <div class="grid-campanha">
                     <div class="highlight-box">
                         <strong>Indicadores:</strong> Qtd: 49 | R$ 5.071,91
-                        <div class="tm-text">Ticket Médio: R$ 103.51</div>
+                        <div class="tm-text">Ticket Médio: R$ 103,51</div>
                     </div>
                     <div class="highlight-box">
                         <strong>Indicados:</strong> Qtd: 73 | R$ 8.752,88
-                        <div class="tm-text">Ticket Médio: R$ 119.90</div>
+                        <div class="tm-text">Ticket Médio: R$ 119,90</div>
                     </div>
                     <div class="invest-box">
-                        <strong>Incentivo (Desconto):</strong> R$ 1465.00<br>
-                        <strong>% de Incentivo sobre a Venda:</strong> 10.60%
+                        <strong>Incentivo (Desconto):</strong> R$ 1.465,00<br>
+                        <strong>% de Incentivo sobre a Venda:</strong> 10,60%
                     </div>
                 </div>
             </div>
@@ -74,15 +89,15 @@
                 <div class="grid-campanha">
                     <div class="highlight-box">
                         <strong>Indicadores:</strong> Qtd: 24 | R$ 1.658,61
-                        <div class="tm-text">Ticket Médio: R$ 69.11</div>
+                        <div class="tm-text">Ticket Médio: R$ 69,11</div>
                     </div>
                     <div class="highlight-box">
                         <strong>Indicados:</strong> Qtd: 28 | R$ 2.576,78
-                        <div class="tm-text">Ticket Médio: R$ 92.03</div>
+                        <div class="tm-text">Ticket Médio: R$ 92,03</div>
                     </div>
                     <div class="invest-box">
-                        <strong>Incentivo (Desconto):</strong> R$ 640.00<br>
-                        <strong>% de Incentivo sobre a Venda:</strong> 15.11%
+                        <strong>Incentivo (Desconto):</strong> R$ 640,00<br>
+                        <strong>% de Incentivo sobre a Venda:</strong> 15,11%
                     </div>
                 </div>
             </div>
@@ -97,15 +112,15 @@
                 <div class="grid-campanha">
                     <div class="highlight-box">
                         <strong>Indicadores:</strong> Qtd: 4 | R$ 832,25
-                        <div class="tm-text">Ticket Médio: R$ 208.06</div>
+                        <div class="tm-text">Ticket Médio: R$ 208,06</div>
                     </div>
                     <div class="highlight-box">
                         <strong>Indicados:</strong> Qtd: 17 | R$ 3.004,82
-                        <div class="tm-text">Ticket Médio: R$ 176.75</div>
+                        <div class="tm-text">Ticket Médio: R$ 176,75</div>
                     </div>
                     <div class="invest-box">
-                        <strong>Incentivo (Desconto):</strong> R$ 230.00<br>
-                        <strong>% de Incentivo sobre a Venda:</strong> 5.99%
+                        <strong>Incentivo (Desconto):</strong> R$ 230,00<br>
+                        <strong>% de Incentivo sobre a Venda:</strong> 5,99%
                     </div>
                 </div>
             </div>
