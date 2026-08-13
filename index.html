@@ -11,47 +11,17 @@
         .card { background-color: #1e1e1e; padding: 20px; border-radius: 12px; border: 1px solid #333; }
         .consolidado { flex: 1; text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center; }
         
-        /* 3 cards de campanha lado a lado */
-        .campanhas-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
+        .campanhas-container { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .campanha-card { background-color: #1e1e1e; padding: 20px; border-radius: 12px; border: 1px solid #333; display: flex; flex-direction: column; justify-content: space-between; }
         
-        .campanha-card {
-            background-color: #1e1e1e;
-            padding: 20px;
-            border-radius: 12px;
-            border: 1px solid #333;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
+        .rank-badge { display: inline-block; background-color: #bb86fc; color: #121212; padding: 2px 8px; border-radius: 4px; font-weight: bold; font-size: 0.85em; margin-bottom: 10px; }
         
-        .rank-badge {
-            display: inline-block;
-            background-color: #bb86fc;
-            color: #121212;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-weight: bold;
-            font-size: 0.85em;
-            margin-bottom: 10px;
-        }
+        .grid-campanha { display: flex; flex-direction: column; gap: 8px; margin-top: 15px; }
+        .highlight-box { background-color: #2b2b2b; border: 1px solid #444; padding: 10px 12px; border-radius: 8px; color: #ffffff; font-size: 0.90em; }
+        .highlight-box strong { color: #03dac6; display: block; }
         
-        .grid-campanha { display: flex; flex-direction: column; gap: 12px; margin-top: 15px; }
-        
-        .highlight-box {
-            background-color: #2b2b2b;
-            border: 1px solid #444;
-            padding: 12px 15px;
-            border-radius: 8px;
-            color: #ffffff;
-            font-size: 0.95em;
-        }
-        
-        .highlight-box strong { color: #03dac6; display: block; margin-bottom: 4px; }
-        
+        .invest-box { background-color: #1a2624; border: 1px solid #03dac6; padding: 10px 12px; border-radius: 8px; color: #03dac6; font-size: 0.90em; margin-top: 5px; }
+
         h2, h3 { color: #bb86fc; margin-top: 0; }
         .date-info { font-size: 0.8em; color: #b0bec5; display: block; margin-top: 5px; line-height: 1.3; }
         .val { font-size: 2.2em; font-weight: bold; color: #03dac6; margin: 10px 0; }
@@ -60,54 +30,63 @@
 </head>
 <body>
     <div class="container">
-        <!-- Top Section - Focado no Consolidado -->
         <div class="top-section">
             <div class="card consolidado">
                 <h2>Total Consolidado</h2>
                 <div class="val">R$ 21.844,45</div>
-                <p style="margin: 0; color: #aaa;">Valor total transacionado (Indicadores + Indicados)</p>
-                <a href="#" class="btn-excel">Exportar Excel</a>
+                <a href="#" class="btn-excel">Exportar Excel Completo</a>
             </div>
         </div>
 
-        <!-- Campanhas com Rank -->
         <div class="campanhas-container">
-            <!-- Campanha 01 (Rank 1 - mais indicados) -->
+            <!-- Campanha 01 -->
             <div class="campanha-card">
                 <div>
                     <div class="rank-badge">RANK #1</div>
                     <h3>Indique e Ganhe 01</h3>
-                    <span class="date-info"><strong>Período:</strong> 05/12/2025 a 28/02/2026<br><strong>Uso até:</strong> 15/03/2026</span>
+                    <span class="date-info"><strong>Período:</strong> 05/12/2025 a 28/02/2026</span>
                 </div>
                 <div class="grid-campanha">
                     <div class="highlight-box"><strong>Indicadores:</strong> Qtd: 49 | R$ 5.071,91</div>
                     <div class="highlight-box"><strong>Indicados:</strong> Qtd: 73 | R$ 8.752,88</div>
+                    <div class="invest-box">
+                        <strong>Incentivo (Desconto):</strong> R$ 1465.00<br>
+                        <strong>% de Incentivo sobre a Venda:</strong> 10.60%
+                    </div>
                 </div>
             </div>
 
-            <!-- Campanha 02 (Rank 2) -->
+            <!-- Campanha 02 -->
             <div class="campanha-card">
                 <div>
                     <div class="rank-badge" style="background-color: #03dac6;">RANK #2</div>
                     <h3>Indique e Ganhe 02</h3>
-                    <span class="date-info"><strong>Período:</strong> 01/04/2026 a 30/05/2026<br><strong>Uso até:</strong> 15/06/2026</span>
+                    <span class="date-info"><strong>Período:</strong> 01/04/2026 a 30/05/2026</span>
                 </div>
                 <div class="grid-campanha">
                     <div class="highlight-box"><strong>Indicadores:</strong> Qtd: 24 | R$ 1.658,61</div>
                     <div class="highlight-box"><strong>Indicados:</strong> Qtd: 28 | R$ 2.576,78</div>
+                    <div class="invest-box">
+                        <strong>Incentivo (Desconto):</strong> R$ 640.00<br>
+                        <strong>% de Incentivo sobre a Venda:</strong> 15.11%
+                    </div>
                 </div>
             </div>
 
-            <!-- Campanha 03 (Rank 3) -->
+            <!-- Campanha 03 -->
             <div class="campanha-card">
                 <div>
                     <div class="rank-badge" style="background-color: #b0bec5;">RANK #3</div>
                     <h3>Indique e Ganhe 03</h3>
-                    <span class="date-info"><strong>Período:</strong> 18/06/2026 a 01/08/2026<br><strong>Uso até:</strong> 15/08/2026</span>
+                    <span class="date-info"><strong>Período:</strong> 18/06/2026 a 01/08/2026</span>
                 </div>
                 <div class="grid-campanha">
                     <div class="highlight-box"><strong>Indicadores:</strong> Qtd: 4 | R$ 832,25</div>
                     <div class="highlight-box"><strong>Indicados:</strong> Qtd: 17 | R$ 3.004,82</div>
+                    <div class="invest-box">
+                        <strong>Incentivo (Desconto):</strong> R$ 230.00<br>
+                        <strong>% de Incentivo sobre a Venda:</strong> 5.99%
+                    </div>
                 </div>
             </div>
         </div>
